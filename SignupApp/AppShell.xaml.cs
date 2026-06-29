@@ -1,10 +1,13 @@
-﻿namespace SignupApp
+﻿using SignupApp.VIews;
+
+namespace SignupApp;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
+    public AppShell()
     {
-        public AppShell()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+
+        Routing.RegisterRoute("ProfilePage", typeof(ProfilePage));
     }
 }

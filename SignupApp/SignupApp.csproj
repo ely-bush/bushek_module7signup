@@ -65,8 +65,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="VIews\" />
-	  <Folder Include="ViewModels\" />
+	  <Compile Update="VIews\SignupPage.xaml.cs">
+	    <DependentUpon>SignupPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="VIews\ProfilePage.xaml.cs">
+	    <DependentUpon>ProfilePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="VIews\SignupPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VIews\ProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

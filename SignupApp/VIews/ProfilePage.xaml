@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SignupApp.ViewModels"
+             x:Class="SignupApp.VIews.ProfilePage"
+             Title="Profile">
+
+    <ContentPage.BindingContext>
+        <vm:ProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+
+        <Frame WidthRequest="90" HeightRequest="90"
+               CornerRadius="45" BackgroundColor="#6C63FF"
+               HorizontalOptions="Center" HasShadow="True" Padding="0">
+            <Label Text="✓" FontSize="40" TextColor="White"
+                   HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+
+        <Label Text="Signup Successful! 🎉"
+               FontSize="22" FontAttributes="Bold"
+               HorizontalOptions="Center" TextColor="#333"/>
+
+        <Label Text="Welcome to the app. Here are your details:"
+               FontSize="14" TextColor="#888"
+               HorizontalOptions="Center"/>
+
+        <Frame BackgroundColor="#F5F5FF" BorderColor="#ddd"
+               CornerRadius="12" Padding="20" HasShadow="False">
+            <VerticalStackLayout Spacing="12">
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="👤" FontSize="18"/>
+                    <VerticalStackLayout>
+                        <Label Text="Username" FontSize="12" TextColor="#888"/>
+                        <Label Text="{Binding Username}"
+                               FontSize="16" FontAttributes="Bold" TextColor="#333"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <BoxView HeightRequest="1" BackgroundColor="#eee"/>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="📧" FontSize="18"/>
+                    <VerticalStackLayout>
+                        <Label Text="Email" FontSize="12" TextColor="#888"/>
+                        <Label Text="{Binding Email}"
+                               FontSize="16" FontAttributes="Bold" TextColor="#333"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <BoxView HeightRequest="1" BackgroundColor="#eee"/>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="🔒" FontSize="18"/>
+                    <VerticalStackLayout>
+                        <Label Text="Password" FontSize="12" TextColor="#888"/>
+                        <Label Text="••••••••"
+                               FontSize="16" FontAttributes="Bold" TextColor="#333"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Sign Out"
+                Command="{Binding SignOutCommand}"
+                BackgroundColor="#FF6B6B"
+                TextColor="White"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Margin="0,10,0,0"/>
+
+    </VerticalStackLayout>
+</ContentPage>
